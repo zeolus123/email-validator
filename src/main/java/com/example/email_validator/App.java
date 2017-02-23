@@ -9,5 +9,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
+        EmailValidator emailVal = new EmailValidator("zachery@hotmail.com");
+        System.out.println(emailVal.validate());
     }
 }
