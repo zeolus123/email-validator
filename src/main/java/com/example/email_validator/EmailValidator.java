@@ -28,10 +28,25 @@ public class EmailValidator {
 	//validate method
 	public boolean validate(){
 		boolean valid = false;
-		if(checkOneAt() == true && email.contains(".")){
+		if((checkOneAt()) && (containsPeriod()) && (!ContainsCaret()) && (!startsWithPeriod())){
 			valid = true;
 		}
 		return valid;
+	}
+	
+	//helper method for validate checks if it starts with a .
+	public boolean startsWithPeriod(){
+		return this.email.charAt(0) == '.';
+	}
+	
+	//helper method for validate checks if it contains the caret symbol
+	public boolean ContainsCaret(){
+		return this.email.contains("^");
+	}
+	
+	//helper method for validate checks if it contains a period
+	public boolean containsPeriod(){
+		return this.email.contains(".");
 	}
 	
 	//helper method that checks there is only one @ character
